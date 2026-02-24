@@ -143,11 +143,11 @@ class DataFrameToSQL:
 class DatabaseConnection:
     CONFIG = {
         'BOT': {
-            'dbname': os.getenv('dbname_BOT'),
-            'user': os.getenv('user_BOT'),
-            'password': os.getenv('password_BOT'),
-            'host': os.getenv('host_BOT'),
-            'port': os.getenv('port_BOT'),
+            'dbname': os.getenv('DBNAME_BOT'),
+            'user': os.getenv('USER_BOT'),
+            'password': os.getenv('PASSWORD_BOT'),
+            'host': os.getenv('HOST_BOT'),
+            'port': os.getenv('PORT_BOT'),
             'sslmode': 'require'
         }
     }
