@@ -24,10 +24,10 @@ jobs:
 
       - name: Run script
         env:
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_PORT: ${{ secrets.DB_PORT }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          host_BOT: ${{ secrets.host_BOT }}
+          port_BOT: ${{ secrets.port_BOT }}
+          dbname_BOT: ${{ secrets.dbname_BOT }}
+          user_BOT: ${{ secrets.user_BOT }}
+          password_BOT: ${{ secrets.password_BOT }}
         run: |
           python update_name_on.py
