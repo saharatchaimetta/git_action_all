@@ -11,7 +11,7 @@ def get_data_name_on():
         SELECT 
             *
         FROM
-            user_name_bg_1000
+            line_bot.user_name_bg_1000
         WHERE
             status = TRUE
         order BY
@@ -28,7 +28,7 @@ def get_shift_today():
         SELECT 
             *
         FROM
-            shift_schedule
+            line_bot.shift_schedule
         WHERE
             date = %(today)s
         order BY
@@ -68,7 +68,7 @@ def main():
     dataframe_update = dataframe_update.rename(columns={"last_shift_y": "last_shift","shift": "remark","last_update_y": "last_update"})
     dataframe_update['last_shift'] = dataframe_update['last_shift'].fillna(0).astype(int)
     # print_table(dataframe_update)
-    DatabaseConnection("BOT").upsert_dataframe(dataframe_update,"user_name_bg_1000",["id"],"temp_user_name_bg_1000",1000)
+    DatabaseConnection("BOT").upsert_dataframe(dataframe_update,"line_bot.user_name_bg_1000",["id"],"temp_user_name_bg_1000",1000)
     
     # print_table(dataframe_update)
     
