@@ -64,10 +64,11 @@ def main():
     # print_table(dataframe_name)
     dataframe_update = pd.merge(dataframe_name, dataframe_shift, on="code_name", how="left")
     # print_table(dataframe_update)
-    dataframe_update = dataframe_update[['id', 'code_name','shift', 'last_shift_y','last_update_y']]
-    dataframe_update = dataframe_update.rename(columns={"last_shift_y": "last_shift","shift": "remark","last_update_y": "last_update"})
+    dataframe_update = dataframe_update[['id', 'code_name', 'last_shift_y','last_update_y']]
+    dataframe_update = dataframe_update.rename(columns={"last_shift_y": "last_shift","last_update_y": "last_update"})
     dataframe_update['last_shift'] = dataframe_update['last_shift'].fillna(0).astype(int)
     # print_table(dataframe_update)
+
     DatabaseConnection("BOT").upsert_dataframe(dataframe_update,"line_bot.user_name_bg_1000",["id"],"temp_user_name_bg_1000",1000)
     
     # print_table(dataframe_update)
