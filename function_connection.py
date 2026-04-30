@@ -9,7 +9,7 @@ import io
 import os
 from datetime import date, datetime
 from dataclasses import dataclass
-load_dotenv()
+load_dotenv(r"C:\Users\User\Desktop\Project\Python Projects\line_bot\shift-scheduler\clane_data\.env.local")
 arguments = sys.argv
 from tabulate import tabulate
 
@@ -151,7 +151,7 @@ class DatabaseConnection:
             'sslmode': 'require'
         }
     }
-    
+    print(f"Configuration for BOT: {CONFIG['BOT']}")  # Debugging output
     
     def __init__(self, project_name: str):
         self.project_name = project_name
